@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TodoItem } from '../model/todoItem';
 
 @Component({
@@ -8,4 +8,9 @@ import { TodoItem } from '../model/todoItem';
 
 export class TodoList {
     @Input() todoItems: TodoItem[];
+    @Output() onRemove = new EventEmitter<number>();
+
+    removeTodo(todoId: number) {
+        this.onRemove.emit(todoId);
+    }
 }

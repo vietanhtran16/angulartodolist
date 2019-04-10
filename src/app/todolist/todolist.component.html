@@ -1,4 +1,4 @@
 <p>Here is what you need to do</p>
 <ul *ngFor="let todo of todoItems">
-    <li>{{ todo.description }}</li>
+    <li (click)="removeTodo(todo.id)" >{{ todo.description }}</li>
 </ul>
