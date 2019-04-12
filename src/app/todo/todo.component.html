@@ -1,4 +1,6 @@
 <app-todobox (onAdd)="addItem($event)"></app-todobox>
 <app-todolist 
     [todoItems]="todoItems"
-    (onRemove)="removeItem($event)"></app-todolist>
+    (onRemove)="removeItem($event)"
+    (onToggleCompletion)="toggleCompletion($event)">
+</app-todolist>

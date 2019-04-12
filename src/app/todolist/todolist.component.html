@@ -1,4 +1,14 @@
 <p>Here is what you need to do</p>
 <ul *ngFor="let todo of todoItems">
-    <li (click)="removeTodo(todo.id)" >{{ todo.description }}</li>
+    <li class="list-group-item" [ngClass]="todo.isCompleted ? 'complete-todo' : 'incomplete-todo'">
+        {{ todo.description }}
+        <div class="buttons">
+            <button type="button" class="btn btn-success" (click)="toggleCompletion(todo.id)">
+                Toggle completion
+            </button>
+            <button type="button" class="btn btn-danger" (click)="removeTodo(todo.id)">
+                Remove
+            </button>
+        </div>
+    </li>
 </ul>

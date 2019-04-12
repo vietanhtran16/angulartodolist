@@ -16,4 +16,10 @@ export class Todo {
     removeItem(toBeRemovedId: number){
         this.todoItems = this.todoItems.filter(({id}) => id !== toBeRemovedId );
     }
+
+    toggleCompletion(todoId: number){
+        console.log('todoId', todoId);
+        this.todoItems = this.todoItems.map(item => item.id === todoId ? {...item, isCompleted: !item.isCompleted} : item);
+        console.log('this.todoItems', this.todoItems);
+    }
 }

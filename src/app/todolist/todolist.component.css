@@ -1,0 +1,11 @@
+.complete-todo {
+    color: green
+}
+
+.incomplete-todo {
+    color: red
+}
+
+.buttons {
+    right: 10px
+}
